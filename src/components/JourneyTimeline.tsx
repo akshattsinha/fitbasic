@@ -174,7 +174,7 @@ export const JourneyTimeline: React.FC = () => {
               <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[11px] text-brand-500 font-mono">
                 <span>Adaptive load adjustment applied automatically</span>
                 <span className="flex items-center gap-1 text-brand-400">
-                  Documented in FIT90 Protocol Handbook <ArrowRight className="w-3 h-3" />
+                  Documented in REVERZN Protocol Handbook <ArrowRight className="w-3 h-3" />
                 </span>
               </div>
             </div>

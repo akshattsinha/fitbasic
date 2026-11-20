@@ -25,10 +25,10 @@ export const QuietNavbar: React.FC<QuietNavbarProps> = ({ onOpenCheckout }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12 flex items-center justify-between">
-        {/* FIT90 Wordmark */}
+        {/* REVERZN Wordmark */}
         <a href="#" className="flex items-center gap-2 group">
           <span className="font-serif text-2xl sm:text-3xl tracking-tight text-charcoal font-normal">
-            FIT<span className="italic font-light text-charcoal/70">90</span>
+            REVER<span className="italic font-light text-charcoal/70">ZN</span>
           </span>
         </a>
 

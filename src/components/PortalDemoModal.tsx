@@ -47,7 +47,7 @@ export const PortalDemoModal: React.FC<PortalDemoModalProps> = ({ isOpen, onClos
             </div>
             <div>
               <span className="font-display font-bold text-sm tracking-wider text-white">
-                FIT90 MEMBER SANCTUM
+                REVERZN MEMBER SANCTUM
               </span>
               <span className="text-[10px] font-mono text-accent-gold ml-2 uppercase px-1.5 py-0.5 rounded-sm bg-accent-gold/10 border border-accent-gold/20">
                 Live Simulation
@@ -218,7 +218,7 @@ export const PortalDemoModal: React.FC<PortalDemoModalProps> = ({ isOpen, onClos
           {activeTab === 'habits' && (
             <div className="space-y-4">
               <div className="p-4 bg-brand-900 rounded-sm border border-white/10 text-xs font-mono text-brand-300">
-                The FIT90 Habit Scorecard converts conscious effort into autonomic identity. Track morning, noon, and evening compliance daily.
+                The REVERZN Habit Scorecard converts conscious effort into autonomic identity. Track morning, noon, and evening compliance daily.
               </div>
 
               <div className="space-y-2.5">
@@ -241,7 +241,7 @@ export const PortalDemoModal: React.FC<PortalDemoModalProps> = ({ isOpen, onClos
         {/* Footer */}
         <div className="bg-brand-900 px-6 py-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-xs font-mono text-brand-400">
-            Real FIT90 accounts include full progress graphs, video vault, and coach messaging.
+            Real REVERZN accounts include full progress graphs, video vault, and coach messaging.
           </div>
           <button
             onClick={() => {

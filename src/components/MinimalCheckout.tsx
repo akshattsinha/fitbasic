@@ -50,7 +50,7 @@ export const MinimalCheckout: React.FC<MinimalCheckoutProps> = ({ isOpen, onClos
     setStep('processing');
 
     setTimeout(() => {
-      const code = `FIT90-${Date.now().toString().slice(-6)}`;
+      const code = `REVERZN-${Date.now().toString().slice(-6)}`;
       setOrderCode(code);
       setStep('confirmed');
 
@@ -87,7 +87,7 @@ export const MinimalCheckout: React.FC<MinimalCheckoutProps> = ({ isOpen, onClos
             </div>
 
             <h3 className="font-serif text-3xl sm:text-4xl text-ivory uppercase tracking-tight mb-2">
-              ENROLL IN FIT<span className="italic">90</span>
+              ENROLL IN REVER<span className="italic">ZN</span>
             </h3>
             <p className="text-xs font-mono uppercase tracking-luxury text-ivory/50 mb-8">
               Total Investment: <span className="text-ivory font-bold">{priceString}</span>
@@ -265,7 +265,7 @@ export const MinimalCheckout: React.FC<MinimalCheckoutProps> = ({ isOpen, onClos
               SECURING ENROLLMENT
             </h4>
             <p className="text-xs font-mono uppercase tracking-luxury text-ivory/50">
-              Generating your FIT90 Member Credentials...
+              Generating your REVERZN Member Credentials...
             </p>
           </div>
         )}
@@ -279,7 +279,7 @@ export const MinimalCheckout: React.FC<MinimalCheckoutProps> = ({ isOpen, onClos
             </div>
 
             <h3 className="font-serif text-4xl sm:text-5xl text-ivory uppercase tracking-tight leading-[1]">
-              WELCOME TO FIT<span className="italic font-light">90.</span>
+              WELCOME TO REVER<span className="italic font-light">ZN.</span>
             </h3>
 
             <p className="text-sm sm:text-base text-ivory/80 font-light leading-relaxed font-sans">
@@ -291,7 +291,7 @@ export const MinimalCheckout: React.FC<MinimalCheckoutProps> = ({ isOpen, onClos
                 Immediate Next Directives:
               </span>
               <div className="space-y-2 text-ivory/80">
-                <div>01. Check your inbox for the FIT90 Member Portal access key.</div>
+                <div>01. Check your inbox for the REVERZN Member Portal access key.</div>
                 <div>02. Complete your 10-minute baseline intake and movement profile.</div>
                 <div>03. Calibrate Day 01 starting equipment and grocery framework.</div>
               </div>

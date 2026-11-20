@@ -54,7 +54,7 @@ export const AwwwardsCheckoutModal: React.FC<AwwwardsCheckoutModalProps> = ({
     setStep('processing');
 
     setTimeout(() => {
-      const code = `FIT90-${Date.now().toString().slice(-6)}`;
+      const code = `REVERZN-${Date.now().toString().slice(-6)}`;
       setOrderCode(code);
       setStep('confirmed');
 
@@ -91,7 +91,7 @@ export const AwwwardsCheckoutModal: React.FC<AwwwardsCheckoutModalProps> = ({
             </div>
 
             <h3 className="font-serif text-3xl sm:text-4xl text-forest uppercase tracking-tight mb-2 font-normal">
-              ENROLL IN FIT<span className="italic font-light text-forest/70">90</span>
+              ENROLL IN REVER<span className="italic font-light text-forest/70">ZN</span>
             </h3>
             <p className="text-xs font-mono uppercase tracking-luxury text-forest/60 mb-8">
               Tuition: <span className="text-forest font-bold">{priceString}</span> • Spring Cohort
@@ -269,7 +269,7 @@ export const AwwwardsCheckoutModal: React.FC<AwwwardsCheckoutModalProps> = ({
               SECURING ENROLLMENT
             </h4>
             <p className="text-xs font-mono uppercase tracking-luxury text-forest/60">
-              Generating your FIT90 Member Credentials...
+              Generating your REVERZN Member Credentials...
             </p>
           </div>
         )}
@@ -283,7 +283,7 @@ export const AwwwardsCheckoutModal: React.FC<AwwwardsCheckoutModalProps> = ({
             </div>
 
             <h3 className="font-serif text-4xl sm:text-5xl text-forest uppercase tracking-tight leading-[1] font-normal">
-              WELCOME TO FIT<span className="italic font-light text-forest/70">90.</span>
+              WELCOME TO REVER<span className="italic font-light text-forest/70">ZN.</span>
             </h3>
 
             <p className="text-sm sm:text-base text-forest/80 font-light leading-relaxed font-sans">
@@ -295,7 +295,7 @@ export const AwwwardsCheckoutModal: React.FC<AwwwardsCheckoutModalProps> = ({
                 Immediate Next Directives:
               </span>
               <div className="space-y-2 text-forest/80">
-                <div>01. Check your inbox for the FIT90 Member Portal access key.</div>
+                <div>01. Check your inbox for the REVERZN Member Portal access key.</div>
                 <div>02. Complete your 10-minute baseline intake and movement profile.</div>
                 <div>03. Calibrate Day 01 starting equipment and grocery framework.</div>
               </div>

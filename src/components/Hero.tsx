@@ -14,7 +14,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout, onOpenVideoModal }) 
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=2400&q=90"
-          alt="FIT90 Premium Athletic Training"
+          alt="REVERZN Premium Athletic Training"
           className="w-full h-full object-cover object-center scale-105 filter brightness-[0.38] contrast-[1.18] saturate-[0.85]"
           fetchPriority="high"
         />
@@ -27,7 +27,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCheckout, onOpenVideoModal }) 
       {/* Decorative Brand Watermark / Architectural Grid */}
       <div className="absolute right-0 top-1/4 -translate-y-1/2 pointer-events-none select-none opacity-[0.03] hidden lg:block">
         <span className="font-display font-black text-[22vw] leading-none text-white tracking-tighter">
-          FIT90
+          REVERZN
         </span>
       </div>
 

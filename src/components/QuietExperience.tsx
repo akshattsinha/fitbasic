@@ -41,7 +41,7 @@ export const QuietExperience: React.FC = () => {
             The Deliverables
           </p>
           <h2 className="font-serif text-4xl sm:text-7xl text-charcoal uppercase tracking-tight font-normal">
-            THE FIT90 <span className="italic font-light text-charcoal/70">EXPERIENCE.</span>
+            THE REVERZN <span className="italic font-light text-charcoal/70">EXPERIENCE.</span>
           </h2>
         </div>
 
@@ -79,7 +79,7 @@ export const QuietExperience: React.FC = () => {
           <div className="lg:col-span-6 bg-ivory border border-[#343630]/[0.08] p-6 sm:p-10 shadow-elevated relative overflow-hidden">
             {/* Top Bar */}
             <div className="flex items-center justify-between pb-6 border-b border-[#343630]/[0.08] text-xs font-mono text-charcoal/50">
-              <span className="tracking-luxury uppercase">FIT90 OS • Member Sanctum</span>
+              <span className="tracking-luxury uppercase">REVERZN OS • Member Sanctum</span>
               <span>Day 34 / 90</span>
             </div>
 

@@ -26,7 +26,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, onOpenC
         <div className="relative aspect-video w-full bg-brand-950 flex flex-col items-center justify-center overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1600&q=85"
-            alt="FIT90 Brand Film Cinema"
+            alt="REVERZN Brand Film Cinema"
             className="w-full h-full object-cover filter brightness-[0.4] contrast-[1.2]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-950 via-transparent to-black/60" />
@@ -46,7 +46,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, onOpenC
               "THE ARCHITECTURE OF PHYSICAL EXCELLENCE"
             </h3>
             <p className="text-xs sm:text-sm text-brand-300 font-light mt-2 max-w-md">
-              A cinematic look into the daily training, metabolic science, and cognitive discipline of FIT90 athletes across 14 countries.
+              A cinematic look into the daily training, metabolic science, and cognitive discipline of REVERZN athletes across 14 countries.
             </p>
           </div>
         </div>

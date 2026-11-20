@@ -78,7 +78,7 @@ export const WarmExperience: React.FC = () => {
             The Deliverables
           </p>
           <h2 className="font-serif text-4xl sm:text-7xl text-charcoal uppercase tracking-tight font-normal">
-            THE FIT90 <span className="italic font-light text-charcoal/70">EXPERIENCE.</span>
+            THE REVERZN <span className="italic font-light text-charcoal/70">EXPERIENCE.</span>
           </h2>
           <p className="text-base sm:text-lg text-charcoal/70 font-light mt-4 font-sans">
             Every component is engineered to eliminate guesswork and build sustainable physical excellence.
@@ -138,7 +138,7 @@ export const WarmExperience: React.FC = () => {
           <div className="lg:col-span-6 bg-ivory border border-delicate-darker p-6 sm:p-10 shadow-elevated relative overflow-hidden">
             {/* Top Bar */}
             <div className="flex items-center justify-between pb-6 border-b border-delicate text-xs font-mono text-charcoal/50">
-              <span className="tracking-luxury uppercase">FIT90 OS • Member Sanctum</span>
+              <span className="tracking-luxury uppercase">REVERZN OS • Member Sanctum</span>
               <span className="flex items-center gap-1.5 text-taupe font-semibold">
                 <Flame className="w-3.5 h-3.5" />
                 Day 34 / 90

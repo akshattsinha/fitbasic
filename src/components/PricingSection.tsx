@@ -158,10 +158,10 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPlan }) 
             </div>
             <div>
               <h4 className="font-display font-bold text-white uppercase text-base">
-                The FIT90 14-Day Protocol Guarantee
+                The REVERZN 14-Day Protocol Guarantee
               </h4>
               <p className="text-xs sm:text-sm text-brand-300 font-light mt-1 max-w-2xl">
-                Test the curriculum, access the portal, review the recipe vault, and execute the first 14 days. If you do not believe FIT90 is the most thorough lifestyle transformation experience you have ever encountered, simply email us within 14 days for a prompt 100% refund.
+                Test the curriculum, access the portal, review the recipe vault, and execute the first 14 days. If you do not believe REVERZN is the most thorough lifestyle transformation experience you have ever encountered, simply email us within 14 days for a prompt 100% refund.
               </p>
             </div>
           </div>

@@ -42,7 +42,7 @@ export const MinimalExperience: React.FC = () => {
             The Deliverables
           </p>
           <h2 className="font-serif text-4xl sm:text-7xl text-ivory uppercase tracking-tight font-normal">
-            THE FIT90 <span className="italic font-light text-ivory/80">EXPERIENCE.</span>
+            THE REVERZN <span className="italic font-light text-ivory/80">EXPERIENCE.</span>
           </h2>
         </div>
 
@@ -80,7 +80,7 @@ export const MinimalExperience: React.FC = () => {
           <div className="lg:col-span-6 bg-surface border border-white/[0.08] p-6 sm:p-10 relative overflow-hidden">
             {/* Top Bar */}
             <div className="flex items-center justify-between pb-6 border-b border-white/[0.08] text-xs font-mono text-ivory/40">
-              <span className="tracking-luxury uppercase">FIT90 OS • Member Sanctum</span>
+              <span className="tracking-luxury uppercase">REVERZN OS • Member Sanctum</span>
               <span>Day 34 / 90</span>
             </div>
 

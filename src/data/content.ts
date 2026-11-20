@@ -6,7 +6,7 @@ export const HERO_DATA = {
   titleLine2: "A DIFFERENT YOU.",
   supportingCopy: "Your next chapter starts with a decision. Build strength, discipline and habits that transform the way you live.",
   primaryCTA: "START YOUR TRANSFORMATION",
-  secondaryCTA: "DISCOVER FIT90",
+  secondaryCTA: "DISCOVER REVERZN",
   stats: [
     { label: "Duration", value: "90 Days" },
     { label: "Core Pillars", value: "04 Systems" },
@@ -20,7 +20,7 @@ export const PHILOSOPHY_PILLARS: PhilosophyPillar[] = [
     number: "01",
     title: "MOVE BETTER",
     subtitle: "Build strength, endurance and physical confidence",
-    description: "Physical training should build you up, not break you down. FIT90 integrates progressive resistance, joint mobility, cardiovascular conditioning, and biomechanical precision designed for sustained athletic longevity.",
+    description: "Physical training should build you up, not break you down. REVERZN integrates progressive resistance, joint mobility, cardiovascular conditioning, and biomechanical precision designed for sustained athletic longevity.",
     takeaways: [
       "Periodized resistance training for metabolic density and posture",
       "Dynamic mobility protocols to unlock hips, thoracic spine, and ankles",
@@ -44,7 +44,7 @@ export const PHILOSOPHY_PILLARS: PhilosophyPillar[] = [
     number: "03",
     title: "THINK BETTER",
     subtitle: "Build consistency, focus and discipline",
-    description: "Motivation is an unreliable emotion; discipline is a trained neurological reflex. FIT90 restructures your decision architecture, eliminating friction and making daily execution effortless.",
+    description: "Motivation is an unreliable emotion; discipline is a trained neurological reflex. REVERZN restructures your decision architecture, eliminating friction and making daily execution effortless.",
     takeaways: [
       "Daily friction reduction systems to protect high-leverage willpower",
       "Mental framing techniques to eliminate self-sabotage under stress",
@@ -192,7 +192,7 @@ export const PROGRAM_FEATURES: ProgramFeature[] = [
   },
   {
     number: "06",
-    title: "The FIT90 Member Portal & Mobile Application",
+    title: "The REVERZN Member Portal & Mobile Application",
     badge: "Digital Platform",
     description: "Clean, distraction-free digital ecosystem accessible from any mobile browser or desktop. Real-time workout logging, timer integration, calendar sync, and resource library.",
     deliverables: [
@@ -206,7 +206,7 @@ export const PROGRAM_FEATURES: ProgramFeature[] = [
     number: "07",
     title: "Executive 1-on-1 Performance Concierge",
     badge: "VIP Tier Only",
-    description: "For leaders, executives, and high-performers seeking white-glove personal oversight. A dedicated FIT90 performance coach monitors your progress daily, adjusting parameters in real-time.",
+    description: "For leaders, executives, and high-performers seeking white-glove personal oversight. A dedicated REVERZN performance coach monitors your progress daily, adjusting parameters in real-time.",
     deliverables: [
       "Weekly private video check-in and technique review with head coach",
       "Direct private WhatsApp / Telegram concierge access",
@@ -218,11 +218,11 @@ export const PROGRAM_FEATURES: ProgramFeature[] = [
     number: "08",
     title: "Lifetime Post-90-Day Transition Blueprint",
     badge: "Alumni Vault",
-    description: "Most fitness programs end with a void. FIT90 provides a structured year-round lifestyle blueprint so your Day 90 standard remains your permanent baseline forever.",
+    description: "Most fitness programs end with a void. REVERZN provides a structured year-round lifestyle blueprint so your Day 90 standard remains your permanent baseline forever.",
     deliverables: [
       "Year-round maintenance macro and caloric adjustment formula",
       "Seasonal 4-week training cycle templates to prevent stagnation",
-      "Permanent access to the FIT90 alumni updates and masterclasses"
+      "Permanent access to the REVERZN alumni updates and masterclasses"
     ],
     tier: "all"
   }
@@ -235,9 +235,9 @@ export const TRANSFORMATION_STORIES: TransformationStory[] = [
     role: "Managing Director, Private Equity",
     location: "London, UK",
     age: 39,
-    program: "FIT90 Executive Concierge",
+    program: "REVERZN Executive Concierge",
     summary: "High stress, constant transatlantic travel, and inconsistent workouts left Marcus exhausted. In 90 days, he rebuilt athletic conditioning, dropped 19 lbs of fat, and increased deadlift by 35kg.",
-    quote: "FIT90 transformed how I operate in the boardroom and with my family. The daily habit framework made discipline automatic even when living out of hotels.",
+    quote: "REVERZN transformed how I operate in the boardroom and with my family. The daily habit framework made discipline automatic even when living out of hotels.",
     metrics: {
       weightDelta: "-19.2 lbs",
       bodyFatDelta: "-7.4%",
@@ -255,7 +255,7 @@ export const TRANSFORMATION_STORIES: TransformationStory[] = [
     role: "Creative Director & Mother of 2",
     location: "Zurich, Switzerland",
     age: 35,
-    program: "FIT90 Digital Experience",
+    program: "REVERZN Digital Experience",
     summary: "Frustrated by years of extreme calorie restriction and chronic fatigue, Elena learned sustainable nutritional mechanics, built lean core definition, and restored deep sleep.",
     quote: "No food guilt, no two-hour gym sessions. The clarity and strength I built during these 90 days completely transformed my energy and physical confidence.",
     metrics: {
@@ -275,8 +275,8 @@ export const TRANSFORMATION_STORIES: TransformationStory[] = [
     role: "Fintech Co-Founder",
     location: "Singapore",
     age: 43,
-    program: "FIT90 Executive Concierge",
-    summary: "Suffered from chronic desk posture and high blood pressure. FIT90 restructured his circadian rhythm, introduced progressive barbell work, and reduced body fat from 23.5% to 15.2%.",
+    program: "REVERZN Executive Concierge",
+    summary: "Suffered from chronic desk posture and high blood pressure. REVERZN restructured his circadian rhythm, introduced progressive barbell work, and reduced body fat from 23.5% to 15.2%.",
     quote: "The system is engineered for busy professionals who demand results without fluff. It is easily the highest-ROI investment I made in my health.",
     metrics: {
       weightDelta: "-22.0 lbs",
@@ -300,7 +300,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     priceINR: 14999,
     period: "Single Investment for 90 Days",
     tagline: "The complete self-guided transformation architecture.",
-    description: "Designed for ambitious individuals who want the complete, step-by-step FIT90 curriculum, digital portal, nutrition blueprints, and daily habit tracking.",
+    description: "Designed for ambitious individuals who want the complete, step-by-step REVERZN curriculum, digital portal, nutrition blueprints, and daily habit tracking.",
     popular: true,
     features: [
       "Complete 90-Day Periodized Workout System (Gym & Home Tracks)",
@@ -323,7 +323,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     priceINR: 37999,
     period: "Strictly Limited to 15 Members per Cohort",
     tagline: "White-glove 1-on-1 coaching for executives & leaders.",
-    description: "The complete FIT90 experience elevated with dedicated 1-on-1 coaching, personalized form audits, weekly video check-ins, and direct VIP coach access.",
+    description: "The complete REVERZN experience elevated with dedicated 1-on-1 coaching, personalized form audits, weekly video check-ins, and direct VIP coach access.",
     popular: false,
     features: [
       "Everything included in The 90-Day Digital Experience",
@@ -333,7 +333,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       "Direct WhatsApp / Telegram Concierge Access for daily questions",
       "Custom workout schedule adjustments for high-frequency travel",
       "Priority onboarding call before Day 01 kickoff",
-      "Complimentary FIT90 Premium Welcome Kit & Habit Journal"
+      "Complimentary REVERZN Premium Welcome Kit & Habit Journal"
     ],
     ctaText: "ENROLL IN EXECUTIVE CONCIERGE"
   }
@@ -343,14 +343,14 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: "faq-1",
     category: "program",
-    question: "What exactly is FIT90?",
-    answer: "FIT90 is a comprehensive 90-day lifestyle transformation architecture. It is not an arbitrary workout PDF or a restrictive diet fad. It combines progressive periodized training, sustainable nutrition systems, behavioral habit science, and daily accountability to help you build physical strength, metabolic resilience, and lifelong discipline."
+    question: "What exactly is REVERZN?",
+    answer: "REVERZN is a comprehensive 90-day lifestyle transformation architecture. It is not an arbitrary workout PDF or a restrictive diet fad. It combines progressive periodized training, sustainable nutrition systems, behavioral habit science, and daily accountability to help you build physical strength, metabolic resilience, and lifelong discipline."
   },
   {
     id: "faq-2",
     category: "program",
     question: "Who is this program designed for?",
-    answer: "FIT90 is built for busy professionals, entrepreneurs, creatives, and ambitious men and women who demand a structured, intelligent approach to physical excellence. Whether you need to rebuild your foundational fitness after years of neglect or take your physical performance to peak levels, FIT90 scales to your starting baseline."
+    answer: "REVERZN is built for busy professionals, entrepreneurs, creatives, and ambitious men and women who demand a structured, intelligent approach to physical excellence. Whether you need to rebuild your foundational fitness after years of neglect or take your physical performance to peak levels, REVERZN scales to your starting baseline."
   },
   {
     id: "faq-3",
@@ -361,7 +361,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: "faq-4",
     category: "program",
-    question: "Is FIT90 suitable for complete beginners?",
+    question: "Is REVERZN suitable for complete beginners?",
     answer: "Yes. Every movement is accompanied by 4K biomechanical video masterclasses showing correct cues, tempo, and regressions. The first 30 days (Chapter 01 — Foundation) are specifically engineered to build movement proficiency, joint stability, and progressive tolerance before high-intensity loads are introduced."
   },
   {
@@ -374,13 +374,13 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq-6",
     category: "nutrition",
     question: "How does the nutrition guidance work?",
-    answer: "We reject dogmatic crash diets. FIT90 provides you with a personalized caloric and macronutrient roadmap calculated from your body metrics and daily energy expenditure. You receive our gourmet high-protein recipe vault, practical grocery blueprints, and executive dining-out strategies so you can thrive socially without derailing your goals."
+    answer: "We reject dogmatic crash diets. REVERZN provides you with a personalized caloric and macronutrient roadmap calculated from your body metrics and daily energy expenditure. You receive our gourmet high-protein recipe vault, practical grocery blueprints, and executive dining-out strategies so you can thrive socially without derailing your goals."
   },
   {
     id: "faq-7",
     category: "results",
     question: "How do I track my progress over the 90 days?",
-    answer: "Inside the private FIT90 member portal, you will log your daily workouts, weights lifted, habit adherence score, and weekly biometrics. You will participate in formal milestone audits at Day 30, Day 60, and Day 90 to calibrate your trajectory and document real progress."
+    answer: "Inside the private REVERZN member portal, you will log your daily workouts, weights lifted, habit adherence score, and weekly biometrics. You will participate in formal milestone audits at Day 30, Day 60, and Day 90 to calibrate your trajectory and document real progress."
   },
   {
     id: "faq-8",
@@ -392,13 +392,13 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq-9",
     category: "logistics",
     question: "How and when do I receive access after purchasing?",
-    answer: "Immediately upon completing your checkout, you will receive your personal login credentials to the FIT90 Member Portal, along with our Step-by-Step Day 0 Preparation Guide, printable habit scorecards, and calendar sync links. If enrolled in Executive Concierge, your coach contacts you within 6 business hours."
+    answer: "Immediately upon completing your checkout, you will receive your personal login credentials to the REVERZN Member Portal, along with our Step-by-Step Day 0 Preparation Guide, printable habit scorecards, and calendar sync links. If enrolled in Executive Concierge, your coach contacts you within 6 business hours."
   },
   {
     id: "faq-10",
     category: "logistics",
     question: "What is the refund policy?",
-    answer: "We stand behind our work with our 14-Day Protocol Guarantee. If you log into the member portal, review the materials, follow the first 14 days of habit tracking, and genuinely believe FIT90 is not the most thorough lifestyle transformation system you have experienced, notify us within 14 days for a prompt, courteous 100% refund."
+    answer: "We stand behind our work with our 14-Day Protocol Guarantee. If you log into the member portal, review the materials, follow the first 14 days of habit tracking, and genuinely believe REVERZN is not the most thorough lifestyle transformation system you have experienced, notify us within 14 days for a prompt, courteous 100% refund."
   }
 ];
 

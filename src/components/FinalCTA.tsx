@@ -14,7 +14,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenCheckout }) => {
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2400&q=90"
-            alt="FIT90 Transformation Finale"
+            alt="REVERZN Transformation Finale"
             className="w-full h-full object-cover object-center filter brightness-[0.25] contrast-[1.25]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/70 to-brand-950/90" />
@@ -45,7 +45,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenCheckout }) => {
               onClick={onOpenCheckout}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white hover:bg-accent-champagne text-brand-950 font-bold text-xs uppercase tracking-widest px-9 py-4 rounded-sm transition-all duration-300 shadow-2xl hover:shadow-accent-gold/25"
             >
-              <span>START FIT90</span>
+              <span>START REVERZN</span>
               <ArrowUpRight className="w-4 h-4" />
             </button>
 
@@ -81,11 +81,11 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenCheckout }) => {
                   <span className="font-display font-bold text-base text-accent-champagne">F</span>
                 </div>
                 <span className="font-display tracking-[0.25em] text-lg font-bold text-white">
-                  FIT<span className="text-accent-gold">90</span>
+                  REVER<span className="text-accent-gold">ZN</span>
                 </span>
               </div>
               <p className="text-brand-300 text-xs font-sans font-light leading-relaxed max-w-sm">
-                FIT90 is an elite lifestyle transformation architecture designed to help high-achievers construct sustainable habits, physical strength, and daily cognitive discipline.
+                REVERZN is an elite lifestyle transformation architecture designed to help high-achievers construct sustainable habits, physical strength, and daily cognitive discipline.
               </p>
               <div className="text-[11px] text-brand-500">
                 Zurich • London • New York • Singapore
@@ -127,7 +127,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenCheckout }) => {
                 <li><a href="#faq" className="hover:text-white transition-colors">Terms of Service</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors">Privacy Charter</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors">Health Advisory</a></li>
-                <li><a href="mailto:concierge@fit90.com" className="hover:text-white transition-colors">Executive Concierge</a></li>
+                <li><a href="mailto:concierge@reverzn.com" className="hover:text-white transition-colors">Executive Concierge</a></li>
               </ul>
             </div>
           </div>
@@ -135,7 +135,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenCheckout }) => {
           {/* Bottom Copyright & Disclaimer */}
           <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-brand-500">
             <div>
-              © 2026 FIT90 Inc. All Rights Reserved. Not a medical treatment program.
+              © 2026 REVERZN Inc. All Rights Reserved. Not a medical treatment program.
             </div>
             <div className="flex items-center gap-4">
               <span>Standard SSL 256-Bit Architecture</span>

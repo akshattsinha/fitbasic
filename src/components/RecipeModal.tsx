@@ -123,7 +123,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({ recipe, onClose }) => 
           <div className="p-4 rounded-sm bg-accent-gold/10 border border-accent-gold/30 text-xs text-brand-200 flex items-start gap-2.5">
             <Sparkles className="w-4 h-4 text-accent-gold shrink-0 mt-0.5" />
             <div>
-              <strong className="text-white font-mono uppercase block text-[10px] mb-0.5">FIT90 Culinary Advisory Note:</strong>
+              <strong className="text-white font-mono uppercase block text-[10px] mb-0.5">REVERZN Culinary Advisory Note:</strong>
               <span className="font-light">{recipe.chefNote}</span>
             </div>
           </div>
@@ -131,7 +131,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({ recipe, onClose }) => 
 
         {/* Footer */}
         <div className="p-4 bg-brand-900 border-t border-white/10 flex items-center justify-between text-xs font-mono text-brand-400">
-          <span>From the FIT90 90-Day Recipe Vault</span>
+          <span>From the REVERZN 90-Day Recipe Vault</span>
           <button
             onClick={onClose}
             className="px-4 py-1.5 bg-white text-brand-950 font-bold uppercase rounded-sm hover:bg-accent-champagne transition-colors"

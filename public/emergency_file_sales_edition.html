@@ -1,0 +1,1315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REVERZN • Emergency Protocol & Medical Dossier</title>
+  <meta name="description" content="Editable & downloadable family emergency medical card, ER handoff sheet and 30-day health tracker." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --cream: #F7F5EF;
+      --cream-light: #FBF9F4;
+      --forest: #343630;
+      --forest-light: #52554C;
+      --peach: #E9BFAF;
+      --peach-light: #F5DDD4;
+      --peach-dark: #C98F7A;
+      --sage: #C6D5BC;
+      --sage-dark: #829476;
+      --border: rgba(52, 54, 48, 0.12);
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --purple: #6d3be0;
+      --purple-light: #f3edff;
+      --red: #c81e32;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cream);
+      color: var(--forest);
+      min-height: 100vh;
+      line-height: 1.5;
+      padding-bottom: 80px;
+    }
+
+    /* Ambient background mesh */
+    .bg-mesh {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: 
+        radial-gradient(circle at 15% 20%, rgba(233, 191, 175, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(198, 213, 188, 0.28) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(214, 198, 232, 0.18) 0%, transparent 55%);
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 245, 239, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+    }
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--forest);
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--forest);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-back:hover {
+      background: var(--forest);
+      color: #fff;
+    }
+    .brand-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+      font-weight: 400;
+    }
+    .brand-title span {
+      font-style: italic;
+      color: var(--forest-light);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-sample {
+      padding: 7px 14px;
+      border-radius: 99px;
+      background: rgba(233, 191, 175, 0.35);
+      border: 1px solid var(--peach-dark);
+      color: var(--forest);
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .btn-sample:hover {
+      background: var(--peach);
+    }
+    .btn-clear {
+      padding: 7px 12px;
+      border-radius: 99px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--forest-light);
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .btn-clear:hover { background: #fff; color: var(--red); }
+    .status-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--forest-light);
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    /* Main Container */
+    main {
+      position: relative;
+      z-index: 10;
+      max-width: 1360px;
+      margin: 28px auto 0;
+      padding: 0 24px;
+    }
+    .hero-banner {
+      margin-bottom: 28px;
+    }
+    .pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 99px;
+      background: rgba(233, 191, 175, 0.4);
+      border: 1px solid var(--peach-dark);
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      color: var(--forest);
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4.5vw, 54px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    h1 em { font-style: italic; color: var(--forest-light); }
+    .subtitle {
+      font-size: 14px;
+      color: var(--forest-light);
+      max-width: 760px;
+      line-height: 1.6;
+    }
+
+    /* Layout Grid */
+    .app-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 980px) {
+      .app-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Form Column */
+    .form-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(52, 54, 48, 0.04);
+    }
+    .section-card-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    .section-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--forest-light);
+      display: block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      font-weight: 600;
+      color: var(--forest);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 600px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .col-span-2 { grid-column: span 2; }
+    @media (max-width: 600px) {
+      .col-span-2 { grid-column: span 1; }
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--forest-light);
+    }
+    label span.req { color: var(--red); font-weight: bold; }
+    input, select, textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--forest);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--forest);
+      box-shadow: 0 0 0 3px rgba(52, 54, 48, 0.08);
+      background: #fff;
+    }
+    textarea { min-height: 80px; resize: vertical; line-height: 1.4; }
+
+    /* Confirmation checkbox */
+    .confirm-box {
+      background: rgba(233, 191, 175, 0.2);
+      border: 1px solid var(--peach);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+    .confirm-box input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+    .confirm-text {
+      font-size: 13px;
+      color: var(--forest);
+      line-height: 1.4;
+      text-transform: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Preview & Download Column */
+    .preview-column {
+      position: sticky;
+      top: 90px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    @media (max-width: 980px) {
+      .preview-column { position: static; }
+    }
+
+    .preview-card-wrap {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(52, 54, 48, 0.05);
+    }
+    .preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .preview-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--forest-light);
+    }
+    .tab-pills {
+      display: flex;
+      gap: 4px;
+      background: rgba(52, 54, 48, 0.06);
+      padding: 3px;
+      border-radius: 99px;
+    }
+    .tab-pill {
+      padding: 4px 12px;
+      border-radius: 99px;
+      border: none;
+      background: transparent;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      color: var(--forest-light);
+    }
+    .tab-pill.active {
+      background: #fff;
+      color: var(--forest);
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    /* Interactive Live Card Display (85.6mm x 54mm ratio = ~1.585) */
+    .live-card {
+      width: 100%;
+      aspect-ratio: 85.6 / 54;
+      border-radius: 12px;
+      border: 1.5px solid var(--purple);
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(109, 59, 224, 0.15);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      padding: 0;
+      transition: all 0.3s;
+    }
+    .live-card-top {
+      background: var(--purple);
+      color: #fff;
+      padding: 8px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .live-card-brand {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .live-card-tag {
+      font-size: 9px;
+      opacity: 0.9;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .live-card-body {
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+      justify-content: center;
+    }
+    .card-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: #17142f;
+      line-height: 1.2;
+    }
+    .card-meta {
+      font-size: 10px;
+      color: #69677d;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 4px;
+    }
+    .card-alert-row {
+      background: #fff0f1;
+      border-left: 3px solid var(--red);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      line-height: 1.3;
+    }
+    .card-alert-row strong { color: var(--red); font-size: 9px; }
+    .card-info-row {
+      font-size: 10px;
+      color: #4b4760;
+      line-height: 1.3;
+    }
+    .live-card-footer {
+      background: var(--purple);
+      color: #fff;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Download Action Buttons */
+    .download-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .btn-main-download {
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 14px;
+      background: var(--forest);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 10px 24px rgba(52, 54, 48, 0.2);
+      transition: all 0.2s;
+    }
+    .btn-main-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(52, 54, 48, 0.3);
+      background: #1f201d;
+    }
+    .btn-sub-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .btn-sub-download {
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--forest);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-sub-download:hover {
+      border-color: var(--forest);
+      background: var(--cream);
+    }
+    .btn-print {
+      grid-column: span 2;
+      background: rgba(233, 191, 175, 0.35);
+      border-color: var(--peach-dark);
+    }
+    .btn-print:hover {
+      background: var(--peach);
+    }
+
+    .notice-box {
+      font-size: 11px;
+      color: var(--forest-light);
+      text-align: center;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    /* Print Styles */
+    @media print {
+      body { background: #fff !important; color: #000 !important; }
+      header, .bg-mesh, .header-actions, .download-panel, .tab-pills, .btn-back { display: none !important; }
+      .app-grid { display: block !important; }
+      .preview-column { page-break-before: always; }
+      .section-card { border: 1px solid #ccc !important; box-shadow: none !important; page-break-inside: avoid; }
+    }
+  </style>
+
+  <!-- Preload jsPDF for instantaneous client-side PDF downloads -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="bg-mesh"></div>
+
+  <!-- STICKY REVERZN HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <a href="/" class="btn-back">← Back to REVERZN</a>
+        <div class="brand-title">REVER<span>ZN</span> • Emergency Dossier</div>
+      </div>
+
+      <div class="header-actions">
+        <div class="status-indicator">
+          <div class="status-dot"></div>
+          <span id="save-status">Draft Saved</span>
+        </div>
+        <button type="button" class="btn-sample" onclick="loadSampleData()">Fill Sample Details</button>
+        <button type="button" class="btn-clear" onclick="clearForm()">Clear</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN APP CONTAINER -->
+  <main>
+    <div class="hero-banner">
+      <div class="pill-tag">Family Emergency Protocol & Medical Vault</div>
+      <h1>Official Emergency <em>Medical Dossier.</em></h1>
+      <p class="subtitle">
+        Fill out and customize your household's emergency cards, hospital ER handoff dossier, and 30-day vital trackers. Every field is immediately editable and saved locally. Review your details in the live preview and download your official vector PDFs instantly.
+      </p>
+    </div>
+
+    <div class="app-grid">
+      <!-- LEFT COLUMN: FULL EDITABLE FORM -->
+      <div class="form-column">
+        <!-- 01 IDENTITY & VITALS -->
+        <div class="section-card">
+          <div class="section-card-header">
+            <div>
+              <span class="section-number">Section 01</span>
+              <div class="section-title">Primary Member Baseline</div>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="col-span-2">
+              <label>Full Legal Name <span class="req">*</span>
+                <input id="name" type="text" placeholder="e.g. Ramesh K. Sharma" oninput="updateLivePreview()" />
+              </label>
+            </div>
+            <div>
+              <label>Date of Birth
+                <input id="dob" type="date" oninput="updateLivePreview()" />
+              </label>
+            </div>
+            <div>
+              <label>Sex
+                <select id="sex" onchange="updateLivePreview()">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+            </div>
+            <div>
+              <label>Blood Group (Lab Verified)
+                <select id="blood" onchange="updateLivePreview()">
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="Unknown">Unknown</option>
+                </select>
+              </label>
+            </div>
+            <div>
+              <label>Primary Mobile Phone <span class="req">*</span>
+                <input id="phone" type="tel" placeholder="+91 98765 43210" oninput="updateLivePreview()" />
+              </label>
+            </div>
+            <div class="col-span-2">
+              <label>Daily Tracker Start Date (Optional)
+                <input id="start" type="date" oninput="updateLivePreview()" />
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 CRITICAL MEDICAL ALERTS -->
+        <div class="section-card">
+          <div class="section-card-header">
+            <div>
+              <span class="section-number">Section 02</span>
+              <div class="section-title">Critical Alerts & Allergies</div>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="col-span-2">
+              <label>Drug & Food Allergies (Write NONE only if confirmed) <span class="req">*</span>
+                <textarea id="alg" placeholder="e.g. Penicillin: severe anaphylaxis; Peanuts (Carries EpiPen)" oninput="updateLivePreview()"></textarea>
+              </label>
+            </div>
+            <div class="col-span-2">
+              <label>Chronic Medical Conditions
+                <textarea id="cond" placeholder="e.g. Type 2 Diabetes (controlled), Hypertension, Mild Asthma" oninput="updateLivePreview()"></textarea>
+              </label>
+            </div>
+            <div>
+              <label>Implants / Medical Devices
+                <input id="dev" type="text" placeholder="e.g. Cardiac Stent (2022), Pacemaker" oninput="updateLivePreview()" />
+              </label>
+            </div>
+            <div>
+              <label>On Blood Thinners?
+                <select id="thin" onchange="updateLivePreview()">
+                  <option value="No">No</option>
+                  <option value="Yes">Yes (High Bleed Risk)</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 REGULAR MEDICATIONS -->
+        <div class="section-card">
+          <div class="section-card-header">
+            <div>
+              <span class="section-number">Section 03</span>
+              <div class="section-title">Current Medications</div>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="col-span-2">
+              <label>Prescriptions (One per line: Medicine - Dose - Timing)
+                <textarea id="meds" rows="4" placeholder="Metformin - 500mg - Morning with food&#10;Telmisartan - 40mg - Night&#10;Aspirin - 75mg - Post lunch" oninput="updateLivePreview()"></textarea>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 CLINICAL HISTORY & BASELINE -->
+        <div class="section-card">
+          <div class="section-card-header">
+            <div>
+              <span class="section-number">Section 04</span>
+              <div class="section-title">History & Medical Baseline</div>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="col-span-2">
+              <label>Past Surgeries / Hospital Stays
+                <textarea id="surg" placeholder="e.g. Appendectomy (2015), Knee Arthroscopy (2020)" oninput="updateLivePreview()"></textarea>
+              </label>
+            </div>
+            <div class="col-span-2">
+              <label>Usual Baseline (Walking, Normal BP / Pulse / SpO2)
+                <textarea id="base" placeholder="e.g. Walks independently 3km daily; Normal BP ~125/80, Pulse ~72, SpO2 ~98%" oninput="updateLivePreview()"></textarea>
+              </label>
+            </div>
+            <div class="col-span-2">
+              <label>Care Wishes / Advance Directive & Location
+                <input id="wish" type="text" placeholder="e.g. Full resuscitation authorized; advance directive kept in bedroom safe" oninput="updateLivePreview()" />
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 EMERGENCY CONTACTS & CARE TEAM -->
+        <div class="section-card">
+          <div class="section-card-header">
+            <div>
+              <span class="section-number">Section 05</span>
+              <div class="section-title">Contacts & Healthcare Team</div>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div>
+              <label>Emergency Contact 1 (Name, Relation) <span class="req">*</span>
+                <input id="c1" type="text" placeholder="e.g. Abhishek Sharma (Son)" oninput="updateLivePreview()" />
+              </label>
+            </div>
+            <div>
+              <label>Phone 1 <span class="req">*</span>
+                <input id="p1" type="tel" placeholder="+91 99887 76655" oninput="updateLivePreview()" />
+              </label>
+            </div>
+            <div>
+              <label>Emergency Contact 2 (Name, Relation)
+                <input id="c2" type="text" placeholder="e.g. Sunita Sharma (Spouse)" oninput="updateLivePreview()" />
+              </label>
+            </div>
+            <div>
+              <label>Phone 2
+                <input id="p2" type="tel" placeholder="+91 98111 22233" oninput="updateLivePreview()" />
+              </label>
+            </div>
+            <div>
+              <label>Treating Doctor (Name, Phone)
+                <input id="doc" type="text" placeholder="Dr. V. Mehta (+91 98222 33445)" oninput="updateLivePreview()" />
+              </label>
+            </div>
+            <div>
+              <label>Preferred Hospital (+ Phone)
+                <input id="hos" type="text" placeholder="Fortis Hospital (+91 11 4713 5000)" oninput="updateLivePreview()" />
+              </label>
+            </div>
+            <div class="col-span-2">
+              <label>Health Insurance Provider & Policy No.
+                <input id="ins" type="text" placeholder="Star Health Comprehensive • Policy #SH-8849201" oninput="updateLivePreview()" />
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONFIRMATION BOX -->
+        <div class="confirm-box">
+          <input id="ok" type="checkbox" checked onchange="updateLivePreview()" />
+          <div class="confirm-text">
+            <strong>Accuracy Verification:</strong> I confirm that I have reviewed these medical, medication, and contact details for accuracy. This information dossier is prepared to assist treating clinicians and first responders during emergencies.
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: LIVE REAL-TIME CARD PREVIEW & DOWNLOAD HUB -->
+      <div class="preview-column">
+        <div class="preview-card-wrap">
+          <div class="preview-header">
+            <span class="preview-title">Live Wallet Card Preview</span>
+            <div class="tab-pills">
+              <button type="button" class="tab-pill active" id="tab-front" onclick="setCardView('front')">Front</button>
+              <button type="button" class="tab-pill" id="tab-back" onclick="setCardView('back')">Back</button>
+            </div>
+          </div>
+
+          <!-- INTERACTIVE CARD -->
+          <div class="live-card" id="card-preview">
+            <!-- FRONT VIEW -->
+            <div id="card-front-content" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+              <div class="live-card-top">
+                <span class="live-card-brand">+ EMERGENCY MEDICAL CARD</span>
+                <span class="live-card-tag">IN AN EMERGENCY</span>
+              </div>
+              <div class="live-card-body">
+                <div class="card-name" id="prev-name">Ramesh K. Sharma</div>
+                <div class="card-meta" id="prev-meta">DOB 14/03/1952 • Sex Male • Blood B+ • Ph +91 98765 43210</div>
+                <div class="card-alert-row">
+                  <strong>ALLERGIES:</strong> <span id="prev-alg">Penicillin (Severe reaction)</span>
+                </div>
+                <div class="card-info-row">
+                  <strong style="color:var(--purple);font-size:9px;">CONDITIONS:</strong> <span id="prev-cond">Hypertension, Type 2 Diabetes</span>
+                </div>
+              </div>
+              <div class="live-card-footer">
+                <span>CALL: <span id="prev-c1">Abhishek (Son) +91 99887 76655</span></span>
+              </div>
+            </div>
+
+            <!-- BACK VIEW (HIDDEN INITIALLY) -->
+            <div id="card-back-content" style="display: none; flex-direction: column; justify-content: space-between; height: 100%;">
+              <div class="live-card-top">
+                <span class="live-card-brand">+ EMERGENCY MEDICAL CARD</span>
+                <span class="live-card-tag">SHOW TO DOCTORS</span>
+              </div>
+              <div class="live-card-body">
+                <div class="card-info-row">
+                  <strong style="color:var(--purple);font-size:9px;">MEDICINES:</strong>
+                  <div id="prev-meds" style="white-space: pre-line; max-height: 48px; overflow: hidden;">Metformin 500mg, Telmisartan 40mg</div>
+                </div>
+                <div class="card-alert-row" style="margin-top:2px;">
+                  <strong style="color:var(--red);font-size:9px;">DEVICES / BLOOD THINNER:</strong> <span id="prev-dev">Stent (2022) • Blood Thinner: NO</span>
+                </div>
+                <div class="card-info-row">
+                  <strong style="color:var(--purple);font-size:9px;">DOCTOR / HOSPITAL:</strong> <span id="prev-doc">Dr. Mehta | Fortis Hospital</span>
+                </div>
+              </div>
+              <div class="live-card-footer" style="background:#5329b3;font-size:9px;font-weight:normal;">
+                <span>Updated Live • REVERZN Protocol</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DOWNLOAD CONTROLS -->
+          <div class="download-panel">
+            <button type="button" class="btn-main-download" onclick="downloadAllPDFs()">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+              <span>Download All 3 PDFs</span>
+            </button>
+
+            <div class="btn-sub-grid">
+              <button type="button" class="btn-sub-download" onclick="downloadSinglePDF('card')">
+                🪪 Emergency Card
+              </button>
+              <button type="button" class="btn-sub-download" onclick="downloadSinglePDF('handoff')">
+                📋 ER Handoff Sheet
+              </button>
+              <button type="button" class="btn-sub-download" onclick="downloadSinglePDF('tracker')">
+                📊 Daily Tracker
+              </button>
+              <button type="button" class="btn-sub-download btn-print" onclick="window.print()">
+                🖨️ Print / Save as PDF
+              </button>
+            </div>
+
+            <div class="notice-box">
+              PDFs are generated on-device in crisp vector A4 and true 85.6×54mm wallet size. Your data is stored strictly in your browser.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // State & Helpers
+    const STORAGE_KEY = 'reverzn_emergency_file_data_v2';
+    const v = k => (document.getElementById(k) ? (document.getElementById(k).value || '').trim() : '');
+    const setVal = (k, val) => { const el = document.getElementById(k); if(el) el.value = val; };
+    const fd = s => s ? s.split('-').reverse().join('/') : '';
+
+    // Card Front/Back Toggle
+    function setCardView(view) {
+      const front = document.getElementById('card-front-content');
+      const back = document.getElementById('card-back-content');
+      const tabFront = document.getElementById('tab-front');
+      const tabBack = document.getElementById('tab-back');
+
+      if (view === 'front') {
+        front.style.display = 'flex';
+        back.style.display = 'none';
+        tabFront.classList.add('active');
+        tabBack.classList.remove('active');
+      } else {
+        front.style.display = 'none';
+        back.style.display = 'flex';
+        tabFront.classList.remove('active');
+        tabBack.classList.add('active');
+      }
+    }
+
+    // Live Real-Time Card Preview Update
+    function updateLivePreview() {
+      const name = v('name') || 'Your Full Name';
+      const dob = v('dob');
+      const sex = v('sex') || 'Male';
+      const blood = v('blood') || 'O+';
+      const phone = v('phone') || '+91 00000 00000';
+      const alg = v('alg') || 'No known drug allergies reported';
+      const cond = v('cond') || 'None reported';
+      const meds = v('meds') || 'No regular medications';
+      const dev = v('dev') || 'None';
+      const thin = v('thin') || 'No';
+      const c1 = v('c1') || 'Primary Emergency Contact';
+      const p1 = v('p1') || '+91 00000 00000';
+      const doc = v('doc') || 'Treating Doctor';
+      const hos = v('hos') || 'Preferred Hospital';
+
+      document.getElementById('prev-name').textContent = name;
+      document.getElementById('prev-meta').textContent = `DOB ${fd(dob) || '--/--/----'} • Sex ${sex} • Blood ${blood} • Ph ${phone}`;
+      document.getElementById('prev-alg').textContent = alg;
+      document.getElementById('prev-cond').textContent = cond;
+      document.getElementById('prev-c1').textContent = `${c1} ${p1}`;
+
+      document.getElementById('prev-meds').textContent = meds.replace(/\n/g, ', ');
+      document.getElementById('prev-dev').textContent = `${dev} • Blood Thinner: ${thin.toUpperCase()}`;
+      document.getElementById('prev-doc').textContent = `${doc} | ${hos}`;
+
+      saveDraft();
+    }
+
+    // Auto-save to LocalStorage
+    let saveTimeout;
+    function saveDraft() {
+      clearTimeout(saveTimeout);
+      const indicator = document.getElementById('save-status');
+      if (indicator) indicator.textContent = 'Saving...';
+
+      saveTimeout = setTimeout(() => {
+        const data = {
+          name: v('name'), dob: v('dob'), sex: v('sex'), blood: v('blood'), phone: v('phone'), start: v('start'),
+          alg: v('alg'), cond: v('cond'), dev: v('dev'), thin: v('thin'),
+          meds: v('meds'), surg: v('surg'), base: v('base'), wish: v('wish'),
+          c1: v('c1'), p1: v('p1'), c2: v('c2'), p2: v('p2'),
+          doc: v('doc'), hos: v('hos'), ins: v('ins')
+        };
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+          if (indicator) indicator.textContent = 'Draft Saved';
+        } catch(e) {}
+      }, 400);
+    }
+
+    // Load from LocalStorage
+    function loadDraft() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const data = JSON.parse(raw);
+          Object.keys(data).forEach(k => setVal(k, data[k] || ''));
+          updateLivePreview();
+          return true;
+        }
+      } catch(e) {}
+      return false;
+    }
+
+    // Fill Sample Data
+    function loadSampleData() {
+      setVal('name', 'Ramesh K. Sharma');
+      setVal('dob', '1952-03-14');
+      setVal('sex', 'Male');
+      setVal('blood', 'B+');
+      setVal('phone', '+91 98765 43210');
+      setVal('start', new Date().toISOString().split('T')[0]);
+      setVal('alg', 'Penicillin: severe anaphylaxis, hives\nAspirin sensitivity (stomach irritation)');
+      setVal('cond', 'Hypertension (managed), Type 2 Diabetes, Mild Osteoarthritis');
+      setVal('dev', 'Cardiac Stent in LAD (June 2022)');
+      setVal('thin', 'Yes');
+      setVal('meds', 'Metformin 500mg - 1 tablet twice daily with food\nTelmisartan 40mg - 1 tablet morning\nClopidogrel 75mg - 1 tablet post lunch');
+      setVal('surg', 'Coronary Angioplasty (2022), Cataract surgery bilateral (2019)');
+      setVal('base', 'Walks 2km daily; baseline BP 125/80, resting pulse 68, SpO2 98%. Fully coherent.');
+      setVal('wish', 'Standard emergency resuscitation permitted. Advance directive with son Abhishek.');
+      setVal('c1', 'Abhishek Sharma (Son)');
+      setVal('p1', '+91 99887 76655');
+      setVal('c2', 'Sunita Sharma (Spouse)');
+      setVal('p2', '+91 98111 22233');
+      setVal('doc', 'Dr. V. Mehta (+91 98222 33445)');
+      setVal('hos', 'Fortis Escorts Heart Institute (+91 11 4713 5000)');
+      setVal('ins', 'Star Health Senior Citizen Red Carpet • Policy #SH-8849201');
+      updateLivePreview();
+    }
+
+    // Clear Form
+    function clearForm() {
+      if (!confirm('Clear all fields in this emergency file?')) return;
+      ['name','dob','phone','start','alg','cond','dev','meds','surg','base','wish','c1','p1','c2','p2','doc','hos','ins'].forEach(k => setVal(k, ''));
+      setVal('blood', 'O+');
+      setVal('sex', 'Male');
+      setVal('thin', 'No');
+      localStorage.removeItem(STORAGE_KEY);
+      updateLivePreview();
+    }
+
+    // ==========================================
+    // VECTOR PDF GENERATOR ENGINE (jsPDF)
+    // ==========================================
+    let cut = 0;
+    const W = (d, t, x, y, w, s, lh, mx) => {
+      d.setFontSize(s);
+      let L = d.splitTextToSize(t || '-', w);
+      if (mx && L.length > mx) {
+        cut = 1;
+        L = L.slice(0, mx);
+        L[mx - 1] = L[mx - 1].slice(0, -3) + '...';
+      }
+      d.text(L, x, y);
+      return y + L.length * lh;
+    };
+    const col = (d, a) => d.setTextColor(...a);
+    const P = [109, 59, 224], R = [200, 30, 50], K = [20, 20, 30];
+
+    function card(d, x, y, back) {
+      d.setDrawColor(...P);
+      d.setLineWidth(0.4);
+      d.roundedRect(x, y, 85.6, 54, 3, 3);
+      d.setFillColor(...P);
+      d.roundedRect(x, y, 85.6, 9, 3, 3, 'F');
+      d.rect(x, y + 5, 85.6, 4, 'F');
+      d.setFont('helvetica', 'bold');
+      col(d, [255, 255, 255]);
+      d.setFontSize(8);
+      d.text('+ EMERGENCY MEDICAL CARD', x + 4, y + 6);
+      d.setFontSize(6);
+      d.text(back ? 'SHOW TO DOCTORS' : 'IN AN EMERGENCY', x + 81.6, y + 6, { align: 'right' });
+      col(d, K);
+
+      const L = (t, c, yy) => {
+        d.setFontSize(5.5);
+        col(d, c);
+        d.setFont('helvetica', 'bold');
+        d.text(t, x + 4, yy);
+        col(d, K);
+        d.setFont('helvetica', 'normal');
+      };
+
+      if (!back) {
+        d.setFont('helvetica', 'bold');
+        d.setFontSize(11);
+        d.text((v('name') || 'N/A').slice(0, 30), x + 4, y + 16);
+        d.setFont('helvetica', 'normal');
+        d.setFontSize(7);
+        d.text(`DOB ${fd(v('dob')) || 'N/A'}   Sex ${v('sex')}   Blood ${v('blood')}   Ph ${v('phone')}`, x + 4, y + 20.5);
+        L('ALLERGIES', R, y + 25);
+        W(d, v('alg') || 'None reported', x + 4, y + 28.5, 77, 7, 3, 2);
+        L('CONDITIONS', P, y + 35);
+        W(d, v('cond') || 'None reported', x + 4, y + 38.5, 77, 6.5, 2.8, 2);
+        d.setFillColor(...P);
+        d.rect(x + 0.3, y + 46, 85, 7.7, 'F');
+        col(d, [255, 255, 255]);
+        d.setFont('helvetica', 'bold');
+        d.setFontSize(8);
+        d.text(`CALL: ${v('c1')} ${v('p1')}`.slice(0, 52), x + 4, y + 51.2);
+      } else {
+        L('MEDICINES', P, y + 13);
+        let q = W(d, (v('meds') || 'None').replace(/\n/g, '; '), x + 4, y + 16.5, 77, 6, 2.5, 5);
+        L('DEVICES / BLOOD THINNER: ' + v('thin').toUpperCase(), R, q + 1.5);
+        q = W(d, v('dev') || 'None', x + 4, q + 4.5, 77, 6, 2.5, 2);
+        L('DOCTOR / HOSPITAL', P, q + 1);
+        q = W(d, (v('doc') || 'N/A') + ' | ' + (v('hos') || 'N/A'), x + 4, q + 4, 77, 6, 2.5, 2);
+        W(d, '2nd contact: ' + v('c2') + ' ' + v('p2') + '   Insurance: ' + v('ins'), x + 4, q + 0.5, 77, 5.5, 2.4, 2);
+        d.setFontSize(5);
+        col(d, [110, 110, 120]);
+        d.text('Updated ' + new Date().toLocaleDateString('en-GB') + ' - REVERZN Protocol', x + 4, y + 51.5);
+      }
+    }
+
+    function mark(d, x, y, sx, sy) {
+      d.setDrawColor(120);
+      d.setLineWidth(0.2);
+      d.line(x + sx * 3, y, x + sx * 8, y);
+      d.line(x, y + sy * 3, x, y + sy * 8);
+    }
+
+    function pdfCard(J) {
+      const d = new J({ unit: 'mm', format: 'a4' });
+      const X = 62, Y = 30;
+      d.setFontSize(9);
+      col(d, K);
+      d.setFont('helvetica', 'bold');
+      d.text('REVERZN Emergency Card - Cut on marks & laminate (standard 60x90 mm wallet card)', 20, 18);
+      card(d, X - 10, Y, 0);
+      card(d, X - 10, Y + 70, 1);
+      [[X - 10, Y, -1, -1], [X + 75.6, Y, 1, -1], [X - 10, Y + 54, -1, 1], [X + 75.6, Y + 54, 1, 1],
+       [X - 10, Y + 70, -1, -1], [X + 75.6, Y + 70, 1, -1], [X - 10, Y + 124, -1, 1], [X + 75.6, Y + 124, 1, 1]].forEach(a => mark(d, ...a));
+      d.setFontSize(8);
+      d.setFont('helvetica', 'normal');
+      d.text('FRONT (above)  /  BACK (below). Keep in wallet, smartphone case, and automobile console.', 20, Y + 135);
+      return d;
+    }
+
+    function pdfHand(J) {
+      const d = new J({ unit: 'mm', format: 'a4' });
+      d.setFillColor(...P);
+      d.rect(0, 0, 210, 22, 'F');
+      col(d, [255, 255, 255]);
+      d.setFont('helvetica', 'bold');
+      d.setFontSize(15);
+      d.text('+ REVERZN ER HANDOFF SHEET', 12, 11);
+      d.setFontSize(8);
+      d.text('Hand this directly to triage physician / nurse. Prepared by family in advance.', 12, 17);
+
+      col(d, K);
+      d.setFontSize(16);
+      d.text(v('name') || 'Patient Name', 12, 32);
+      d.setFont('helvetica', 'normal');
+      d.setFontSize(9);
+      d.text(`DOB ${fd(v('dob')) || 'N/A'}   Sex ${v('sex')}   Blood group ${v('blood')}   Mobile ${v('phone')}`, 12, 38);
+
+      d.setFillColor(253, 236, 238);
+      d.rect(10, 42, 190, 17, 'F');
+      d.setFont('helvetica', 'bold');
+      d.setFontSize(7);
+      col(d, R);
+      d.text('ALLERGIES / ADVERSE REACTIONS', 13, 46.5);
+      col(d, K);
+      d.setFontSize(10);
+      W(d, v('alg') || 'No known drug allergies reported', 13, 52, 184, 10, 4.2, 2);
+
+      let y = 65;
+      const S = (l, t, m) => {
+        d.setFont('helvetica', 'bold');
+        d.setFontSize(6.5);
+        col(d, P);
+        d.text(l, 12, y);
+        col(d, K);
+        d.setFont('helvetica', 'normal');
+        y = W(d, t, 12, y + 4, 186, 8.5, 3.7, m) + 3;
+      };
+
+      S('CONDITIONS', v('cond') || 'None', 3);
+      S('IMPLANTS / DEVICES     BLOOD THINNERS: ' + v('thin').toUpperCase(), v('dev') || 'None', 2);
+      S('CURRENT MEDICINES (name - dose - timing)', v('meds') || 'None', 9);
+      S('PAST SURGERIES / HOSPITAL STAYS', v('surg') || 'None', 2);
+      S('USUAL BASELINE', v('base') || 'Normal independent mobility and baseline', 3);
+      S('CARE WISHES / ADVANCE DIRECTIVE', v('wish') || 'Standard lifesaving authorization', 2);
+      S('CONTACTS & CARE TEAM', `1) ${v('c1')} ${v('p1')}    2) ${v('c2')} ${v('p2')}\nDoctor: ${v('doc')}    Hospital: ${v('hos')}    Insurance: ${v('ins')}`, 3);
+
+      y = Math.min(Math.max(y + 4, 175), 225);
+      d.setDrawColor(...R);
+      d.setLineWidth(0.5);
+      d.rect(10, y, 190, 277 - y);
+      d.setFont('helvetica', 'bold');
+      d.setFontSize(8);
+      col(d, R);
+      d.text("TODAY'S EMERGENCY - attendant fills this in", 13, y + 5);
+      col(d, K);
+      d.setDrawColor(190);
+      d.setLineWidth(0.2);
+
+      ['What happened?', 'When did it start? (time)', 'Last medicine taken & time', 'Last food / drink & time', 'Fall, injury, vomiting, fits?', 'Who is with the patient? Phone'].forEach((t, i) => {
+        const yy = y + 13 + i * ((277 - y - 16) / 6);
+        d.setFont('helvetica', 'normal');
+        d.setFontSize(7);
+        d.text(t, 13, yy - 1);
+        d.line(13, yy + 1, 197, yy + 1);
+      });
+
+      d.setFontSize(6);
+      col(d, [110, 110, 120]);
+      d.text('Prepared ' + new Date().toLocaleDateString('en-GB') + ' • REVERZN Protocol Network. Information aid, verify clinically.', 10, 287);
+      return d;
+    }
+
+    function pdfTrack(J) {
+      const d = new J({ unit: 'mm', format: 'a4', orientation: 'l' });
+      const C = [['Date', 22], ['Time', 16], ['BP', 24], ['Pulse', 16], ['SpO2 %', 16], ['Temp', 16], ['Sugar', 18], ['Eating', 16], ['Energy', 16], ['Sleep', 16], ['Pain /10', 14], ['Notes (new symptoms, falls, missed medicines)', 87]];
+
+      for (let pg = 0; pg < 2; pg++) {
+        if (pg) d.addPage();
+        d.setFillColor(...P);
+        d.rect(0, 0, 297, 16, 'F');
+        col(d, [255, 255, 255]);
+        d.setFont('helvetica', 'bold');
+        d.setFontSize(12);
+        d.text(`REVERZN DAILY HEALTH TRACKER - ${v('name') || 'Patient'} (days ${pg * 15 + 1}-${pg * 15 + 15})`, 10, 10.5);
+
+        col(d, K);
+        d.setFontSize(7.5);
+        d.setFont('helvetica', 'normal');
+        W(d, 'Usual baseline: ' + (v('base') || 'write usual BP, pulse, SpO2 here'), 10, 22, 277, 7.5, 3.4, 2);
+        d.text('Doctor: ' + v('doc') + '    Hospital: ' + v('hos'), 10, 31);
+
+        let x = 10;
+        const y0 = 35;
+        d.setFont('helvetica', 'bold');
+        d.setFontSize(7);
+        d.setFillColor(243, 237, 255);
+        d.rect(10, y0, 277, 8, 'F');
+        C.forEach(([t, w]) => { d.text(t, x + 1.5, y0 + 5.3); x += w; });
+
+        d.setDrawColor(210);
+        d.setLineWidth(0.2);
+        for (let r = 0; r < 15; r++) {
+          const y = y0 + 8 + r * 9.6;
+          d.line(10, y + 9.6, 287, y + 9.6);
+          d.setFont('helvetica', 'normal');
+          d.setFontSize(6);
+          col(d, [150, 150, 160]);
+          d.text('OK / LOW', 10 + 22 + 16 + 24 + 16 + 16 + 16 + 18 + 1.5, y + 6);
+          d.text('OK / LOW', 10 + 22 + 16 + 24 + 16 + 16 + 16 + 18 + 16 + 1.5, y + 6);
+          d.text('OK / LOW', 10 + 22 + 16 + 24 + 16 + 16 + 16 + 18 + 32 + 1.5, y + 6);
+          if (v('start')) {
+            const t = new Date(v('start'));
+            t.setDate(t.getDate() + pg * 15 + r);
+            d.setFontSize(7.5);
+            col(d, K);
+            d.text(t.toLocaleDateString('en-GB'), 11.5, y + 6);
+          }
+        }
+        x = 10;
+        C.forEach(([t, w]) => { d.line(x, y0, x, y0 + 8 + 144); x += w; });
+        d.line(287, y0, 287, y0 + 152);
+        col(d, K);
+        d.setFontSize(7);
+        d.text('Same time daily, same arm, seated. Share this sheet with the treating doctor. A steady drift from baseline matters.', 10, 196);
+        col(d, R);
+        d.setFont('helvetica', 'bold');
+        d.text('Chest pain, trouble breathing, face droop, sudden weakness, confusion, unresponsive: call 112 / 108 now - do not wait.', 10, 201);
+      }
+      return d;
+    }
+
+    // Validation
+    function validateForm() {
+      if (!v('name')) {
+        alert('Please enter your Full Legal Name in Section 01.');
+        document.getElementById('name').focus();
+        return false;
+      }
+      if (!v('phone')) {
+        alert('Please enter your Primary Mobile Phone in Section 01.');
+        document.getElementById('phone').focus();
+        return false;
+      }
+      if (!v('c1') || !v('p1')) {
+        alert('Please enter Emergency Contact 1 (Name and Phone) in Section 05.');
+        document.getElementById('c1').focus();
+        return false;
+      }
+      const ok = document.getElementById('ok');
+      if (ok && !ok.checked) {
+        alert('Please review and check the Accuracy Verification box before downloading.');
+        ok.focus();
+        return false;
+      }
+      return true;
+    }
+
+    // Load jsPDF library
+    async function getJsPDF() {
+      if (window.jspdf && window.jspdf.jsPDF) {
+        return window.jspdf.jsPDF;
+      }
+      return new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+        s.onload = () => resolve(window.jspdf.jsPDF);
+        s.onerror = () => reject(new Error('Could not load jsPDF library'));
+        document.head.appendChild(s);
+      });
+    }
+
+    // Download Single PDF
+    async function downloadSinglePDF(type) {
+      if (!validateForm()) return;
+      try {
+        const J = await getJsPDF();
+        cut = 0;
+        const slug = (v('name') || 'emergency').replace(/\W+/g, '-');
+        let doc, filename;
+        if (type === 'card') {
+          doc = pdfCard(J);
+          filename = `${slug}-emergency-card.pdf`;
+        } else if (type === 'handoff') {
+          doc = pdfHand(J);
+          filename = `${slug}-er-handoff.pdf`;
+        } else if (type === 'tracker') {
+          doc = pdfTrack(J);
+          filename = `${slug}-daily-tracker.pdf`;
+        }
+        if (doc) doc.save(filename);
+        if (cut) alert('Some entries were too long and were shortened with "..." on the printed card. Consider keeping descriptions concise.');
+      } catch (err) {
+        console.error(err);
+        alert('Could not generate PDF. You can also use the "Print / Save as PDF" button.');
+      }
+    }
+
+    // Download All 3 PDFs
+    async function downloadAllPDFs() {
+      if (!validateForm()) return;
+      try {
+        const J = await getJsPDF();
+        cut = 0;
+        const slug = (v('name') || 'emergency').replace(/\W+/g, '-');
+        const tasks = [
+          { fn: pdfCard, tag: 'emergency-card' },
+          { fn: pdfHand, tag: 'er-handoff' },
+          { fn: pdfTrack, tag: 'daily-tracker' }
+        ];
+
+        tasks.forEach((t, i) => {
+          setTimeout(() => {
+            const d = t.fn(J);
+            d.save(`${slug}-${t.tag}.pdf`);
+          }, i * 500);
+        });
+
+        setTimeout(() => {
+          if (cut) alert('Some entries were long and were shortened with "..." to fit the true wallet dimensions.');
+        }, 1600);
+      } catch (err) {
+        console.error(err);
+        alert('Could not generate PDFs. Please check your internet connection or use the Print button.');
+      }
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const loaded = loadDraft();
+      if (!loaded) {
+        loadSampleData();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -43,7 +43,7 @@ export const WarmPhilosophy: React.FC = () => {
           </h2>
 
           <p className="text-lg sm:text-2xl text-charcoal/75 font-light max-w-2xl leading-relaxed tracking-wide font-sans text-pretty">
-            FIT90 is not a temporary workout challenge. It is an intentional 90-day lifestyle architecture that aligns physical movement, metabolic nutrition, and daily habits into a permanent standard.
+            REVERZN is not a temporary workout challenge. It is an intentional 90-day lifestyle architecture that aligns physical movement, metabolic nutrition, and daily habits into a permanent standard.
           </p>
         </div>
 

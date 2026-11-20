@@ -27,7 +27,7 @@ const CASES: ClientCase[] = [
     location: "London, UK",
     age: 39,
     summary: "Constant international travel and irregular hours left Marcus fatigued. In 90 days, he rebuilt physical stamina, lost 19.2 lbs of fat, and increased compound deadlift by 35kg.",
-    quote: "FIT90 transformed how I operate in the boardroom and with my family. The daily habit framework made discipline automatic even when living out of hotels.",
+    quote: "REVERZN transformed how I operate in the boardroom and with my family. The daily habit framework made discipline automatic even when living out of hotels.",
     metrics: {
       weightDelta: "-19.2 lbs",
       bodyFatDelta: "-7.4%",
@@ -60,7 +60,7 @@ const CASES: ClientCase[] = [
     role: "Fintech Co-Founder",
     location: "Singapore",
     age: 43,
-    summary: "Suffered from chronic desk posture and elevated blood pressure. FIT90 restructured his circadian rhythm, introduced progressive resistance, and reduced body fat from 23.5% to 15.2%.",
+    summary: "Suffered from chronic desk posture and elevated blood pressure. REVERZN restructured his circadian rhythm, introduced progressive resistance, and reduced body fat from 23.5% to 15.2%.",
     quote: "The system is engineered for busy professionals who demand results without fluff. It is easily the highest-ROI investment I made in my health.",
     metrics: {
       weightDelta: "-22.0 lbs",
@@ -136,7 +136,7 @@ export const AwwwardsStories: React.FC = () => {
             {/* After Image */}
             <img
               src={currentCase.afterImg}
-              alt={`${currentCase.name} After FIT90`}
+              alt={`${currentCase.name} After REVERZN`}
               className="absolute inset-0 w-full h-full object-cover object-center filter contrast-[1.05]"
             />
 
@@ -147,7 +147,7 @@ export const AwwwardsStories: React.FC = () => {
             >
               <img
                 src={currentCase.beforeImg}
-                alt={`${currentCase.name} Before FIT90`}
+                alt={`${currentCase.name} Before REVERZN`}
                 className="absolute inset-0 w-full h-full object-cover object-center filter grayscale-[30%] brightness-[0.9]"
               />
             </div>
@@ -237,7 +237,7 @@ export const AwwwardsStories: React.FC = () => {
 
             <div className="mt-8 pt-6 border-t border-forest/10 flex items-center gap-2 text-[11px] font-mono text-forest/50">
               <Award className="w-4 h-4 text-forest/40 shrink-0" />
-              <span>Documented client case studies reflect strict compliance with the FIT90 daily protocols.</span>
+              <span>Documented client case studies reflect strict compliance with the REVERZN daily protocols.</span>
             </div>
           </div>
         </div>

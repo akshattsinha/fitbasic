@@ -43,7 +43,7 @@ export const AssessmentCalculator: React.FC<AssessmentCalculatorProps> = ({ onAp
             </span>
           </h2>
           <p className="text-sm sm:text-base text-brand-300 font-light leading-relaxed">
-            Enter your baseline parameters to preview your personalized FIT90 metabolic targets, training split, and progression schedule.
+            Enter your baseline parameters to preview your personalized REVERZN metabolic targets, training split, and progression schedule.
           </p>
         </div>
 

@@ -25,7 +25,7 @@ export const Philosophy: React.FC = () => {
             </span>
           </h2>
           <p className="text-base sm:text-lg text-brand-300 font-light leading-relaxed">
-            A temporary diet can change your weight. A temporary workout plan can change your sweat rate. But unless you transform the daily architecture of how you move, nourish, think, and recover, you will inevitably revert to your prior baseline. FIT90 is engineered to build a permanent, elevated standard of everyday living.
+            A temporary diet can change your weight. A temporary workout plan can change your sweat rate. But unless you transform the daily architecture of how you move, nourish, think, and recover, you will inevitably revert to your prior baseline. REVERZN is engineered to build a permanent, elevated standard of everyday living.
           </p>
         </div>
 

@@ -24,7 +24,7 @@ export const WarmPricing: React.FC<WarmPricingProps> = ({ onOpenCheckout }) => {
 
         {/* Title */}
         <h2 className="font-serif text-5xl sm:text-7xl text-charcoal uppercase tracking-tight font-normal mb-6">
-          FIT<span className="italic font-light text-charcoal/70">90</span>
+          REVER<span className="italic font-light text-charcoal/70">ZN</span>
         </h2>
 
         <p className="text-base sm:text-xl text-charcoal/70 font-light max-w-xl mx-auto mb-10 font-sans leading-relaxed">
@@ -86,7 +86,7 @@ export const WarmPricing: React.FC<WarmPricingProps> = ({ onOpenCheckout }) => {
             onClick={() => onOpenCheckout(currency)}
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-12 py-5 bg-charcoal text-ivory text-xs uppercase tracking-luxury font-medium transition-all duration-300 hover:bg-charcoal/90 shadow-elevated"
           >
-            <span>ENROLL IN FIT90</span>
+            <span>ENROLL IN REVERZN</span>
             <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </button>
         </div>

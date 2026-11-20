@@ -27,7 +27,7 @@ const CASES: ClientCase[] = [
     location: "London, UK",
     age: 39,
     summary: "Constant international travel and erratic hours left Marcus fatigued. In 90 days, he rebuilt physical stamina, lost 19.2 lbs of fat, and increased compound deadlift by 35kg.",
-    quote: "FIT90 transformed how I operate in the boardroom and with my family. The daily habit framework made discipline automatic even when living out of hotels.",
+    quote: "REVERZN transformed how I operate in the boardroom and with my family. The daily habit framework made discipline automatic even when living out of hotels.",
     metrics: {
       weightDelta: "-19.2 lbs",
       bodyFatDelta: "-7.4%",
@@ -60,7 +60,7 @@ const CASES: ClientCase[] = [
     role: "Fintech Co-Founder",
     location: "Singapore",
     age: 43,
-    summary: "Suffered from chronic desk posture and elevated blood pressure. FIT90 restructured his circadian rhythm, introduced progressive resistance, and reduced body fat from 23.5% to 15.2%.",
+    summary: "Suffered from chronic desk posture and elevated blood pressure. REVERZN restructured his circadian rhythm, introduced progressive resistance, and reduced body fat from 23.5% to 15.2%.",
     quote: "The system is engineered for busy professionals who demand results without fluff. It is easily the highest-ROI investment I made in my health.",
     metrics: {
       weightDelta: "-22.0 lbs",
@@ -236,7 +236,7 @@ export const WarmStories: React.FC = () => {
             </div>
 
             <div className="mt-8 pt-6 border-t border-delicate text-[11px] font-mono text-charcoal/50">
-              Documented adherence to the FIT90 daily protocols. Results reflect individual starting baselines.
+              Documented adherence to the REVERZN daily protocols. Results reflect individual starting baselines.
             </div>
           </div>
         </div>

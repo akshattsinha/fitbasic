@@ -90,7 +90,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
     // Simulate real gateway handshake (Stripe / Razorpay)
     setTimeout(() => {
-      const generatedOrderId = `FIT90-${Date.now().toString().slice(-6)}-${Math.floor(1000 + Math.random() * 9000)}`;
+      const generatedOrderId = `REVERZN-${Date.now().toString().slice(-6)}-${Math.floor(1000 + Math.random() * 9000)}`;
       setOrderId(generatedOrderId);
       setStep('confirmed');
 
@@ -129,7 +129,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             </div>
 
             <h3 className="font-display text-2xl sm:text-3xl font-bold uppercase text-white tracking-tight mb-2">
-              ENROLL IN FIT90
+              ENROLL IN REVERZN
             </h3>
             <p className="text-xs sm:text-sm text-brand-400 font-light mb-8">
               Spring 2026 Cohort • Instant Member Portal Credentials Delivered Upon Confirmation.
@@ -435,7 +435,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
             <div className="space-y-2">
               <h3 className="font-display text-3xl font-bold uppercase text-white tracking-tight">
-                WELCOME TO FIT90, <br />
+                WELCOME TO REVERZN, <br />
                 <span className="gold-gradient-text">{formData.fullName.split(' ')[0] || 'MEMBER'}</span>.
               </h3>
               <p className="text-xs sm:text-sm text-brand-300 font-light leading-relaxed">
@@ -495,7 +495,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
               <button
                 onClick={() => {
-                  alert(`FIT90 Welcome Kit and Receipt PDF downloaded for Order #${orderId}`);
+                  alert(`REVERZN Welcome Kit and Receipt PDF downloaded for Order #${orderId}`);
                 }}
                 className="py-3.5 px-5 bg-brand-900 hover:bg-brand-850 text-white border border-white/15 text-xs uppercase tracking-widest font-mono rounded-sm transition-all flex items-center justify-center gap-2"
               >

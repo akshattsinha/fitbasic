@@ -38,7 +38,7 @@ export const AwwwardsExperience: React.FC = () => {
             04 • The Digital Experience
           </span>
           <h2 className="font-serif text-5xl sm:text-7xl lg:text-8xl text-forest uppercase tracking-tight leading-[0.95] font-normal">
-            THE FIT90 <br />
+            THE REVERZN <br />
             <span className="italic font-light text-forest/75">SANCTUM.</span>
           </h2>
           <p className="text-base sm:text-lg text-forest/75 font-light mt-4 font-sans">
@@ -125,7 +125,7 @@ export const AwwwardsExperience: React.FC = () => {
                     <div className="w-2.5 h-2.5 rounded-full bg-peach" />
                     <div className="w-2.5 h-2.5 rounded-full bg-butter" />
                     <div className="w-2.5 h-2.5 rounded-full bg-sage" />
-                    <span className="ml-2 uppercase tracking-luxury hidden sm:inline">FIT90 OS v3.8</span>
+                    <span className="ml-2 uppercase tracking-luxury hidden sm:inline">REVERZN OS v3.8</span>
                   </div>
                   <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-peach/20 border border-peach/40 text-forest font-semibold">
                     <Flame className="w-3.5 h-3.5 text-peach-dark" />

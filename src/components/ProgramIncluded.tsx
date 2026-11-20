@@ -24,7 +24,7 @@ export const ProgramIncluded: React.FC = () => {
             <h2 className="font-display text-4xl sm:text-6xl font-black uppercase text-white tracking-tight leading-[1.05]">
               WHAT IS <br />
               <span className="font-serif italic font-normal gold-gradient-text">
-                INCLUDED IN FIT90.
+                INCLUDED IN REVERZN.
               </span>
             </h2>
           </div>

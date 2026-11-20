@@ -4,9 +4,10 @@ import { AnimatedBackground } from './AnimatedBackground';
 
 interface AwwwardsFinalProps {
   onOpenCheckout: () => void;
+  onOpenEmergencyFile?: () => void;
 }
 
-export const AwwwardsFinal: React.FC<AwwwardsFinalProps> = ({ onOpenCheckout }) => {
+export const AwwwardsFinal: React.FC<AwwwardsFinalProps> = ({ onOpenCheckout, onOpenEmergencyFile }) => {
   return (
     <>
       {/* SECTION 07 — FINAL CTA */}
@@ -22,7 +23,7 @@ export const AwwwardsFinal: React.FC<AwwwardsFinalProps> = ({ onOpenCheckout }) 
         <div className="absolute inset-0 z-0 opacity-80">
           <img
             src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=2400&q=90"
-            alt="FIT90 Transformation Finale in Natural Warm Light"
+            alt="REVERZN Transformation Finale in Natural Warm Light"
             className="w-full h-full object-cover object-center filter contrast-[1.05] brightness-[0.94]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/70 to-cream/40" />
@@ -50,7 +51,7 @@ export const AwwwardsFinal: React.FC<AwwwardsFinalProps> = ({ onOpenCheckout }) 
               onClick={onOpenCheckout}
               className="group inline-flex items-center gap-3 px-10 sm:px-14 py-5 rounded-full bg-forest text-cream text-xs uppercase tracking-luxury font-medium transition-all duration-300 hover:shadow-glass-hover hover:scale-[1.02] shadow-elevated"
             >
-              <span>START FIT90</span>
+              <span>START REVERZN</span>
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </button>
           </div>
@@ -65,22 +66,31 @@ export const AwwwardsFinal: React.FC<AwwwardsFinalProps> = ({ onOpenCheckout }) 
         <div className="max-w-7xl mx-auto px-6 sm:px-12 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <span className="font-serif text-2xl tracking-tight text-forest normal-case">
-              FIT<span className="italic font-light text-forest/70">90</span>
+              REVER<span className="italic font-light text-forest/70">ZN</span>
             </span>
             <span className="text-forest/20">•</span>
             <span className="text-[11px] text-forest/60">A Lifestyle Architecture Company</span>
           </div>
 
-          <div className="flex items-center gap-8 text-[11px]">
+          <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-[11px]">
             <a href="#philosophy" className="hover:text-forest transition-colors">Philosophy</a>
             <a href="#journey" className="hover:text-forest transition-colors">The 90 Days</a>
             <a href="#experience" className="hover:text-forest transition-colors">The System</a>
             <a href="#stories" className="hover:text-forest transition-colors">Results</a>
             <a href="#pricing" className="hover:text-forest transition-colors">Tuition</a>
+            {onOpenEmergencyFile && (
+              <button
+                type="button"
+                onClick={onOpenEmergencyFile}
+                className="hover:text-forest text-peach-dark transition-colors font-medium underline underline-offset-4"
+              >
+                Family Emergency File
+              </button>
+            )}
           </div>
 
           <div className="text-[11px] text-forest/40">
-            © 2026 FIT90 Inc. All Rights Reserved.
+            © 2026 REVERZN Inc. All Rights Reserved.
           </div>
         </div>
       </footer>

@@ -63,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCheckout, onOpenPortalDemo
             </div>
             <div className="flex flex-col">
               <span className="font-display tracking-[0.25em] text-lg font-bold text-white group-hover:text-accent-champagne transition-colors">
-                FIT<span className="text-accent-gold">90</span>
+                REVER<span className="text-accent-gold">ZN</span>
               </span>
               <span className="text-[9px] font-mono tracking-widest text-brand-400 uppercase -mt-1">
                 Lifestyle Architecture

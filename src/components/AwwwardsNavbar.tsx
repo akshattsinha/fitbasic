@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight, ShieldAlert } from 'lucide-react';
 
 interface AwwwardsNavbarProps {
   onOpenCheckout: () => void;
+  onOpenEmergencyFile: () => void;
+  onNavigateHome?: () => void;
+  currentPage?: 'home' | 'emergency-file';
 }
 
-export const AwwwardsNavbar: React.FC<AwwwardsNavbarProps> = ({ onOpenCheckout }) => {
+export const AwwwardsNavbar: React.FC<AwwwardsNavbarProps> = ({ 
+  onOpenCheckout, 
+  onOpenEmergencyFile,
+  onNavigateHome,
+  currentPage = 'home'
+}) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -32,43 +40,41 @@ export const AwwwardsNavbar: React.FC<AwwwardsNavbarProps> = ({ onOpenCheckout }
               : 'bg-white/35 backdrop-blur-md border border-white/50 shadow-soft-luxury'
           }`}
         >
-          {/* FIT90 Brand Mark */}
-          <a href="#" className="flex items-center gap-3 group">
+          {/* REVERZN Brand Mark */}
+          <button
+            type="button"
+            onClick={onNavigateHome}
+            className="flex items-center gap-3 group text-left cursor-pointer"
+          >
             <span className="font-serif text-2xl sm:text-3xl tracking-tight text-forest font-normal">
-              FIT<span className="italic font-light text-forest/70">90</span>
+              REVER<span className="italic font-light text-forest/70">ZN</span>
             </span>
             <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-sage/30 text-[10px] font-mono tracking-wider text-forest font-medium border border-sage/40">
               <span className="w-1.5 h-1.5 rounded-full bg-forest animate-pulse" />
               SPRING COHORT
             </span>
-          </a>
+          </button>
 
-          {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-luxury text-forest/70">
-            <a href="#philosophy" className="hover:text-forest transition-colors">
-              Philosophy
-            </a>
-            <a href="#journey" className="hover:text-forest transition-colors">
-              The 90 Days
-            </a>
-            <a href="#experience" className="hover:text-forest transition-colors">
-              The System
-            </a>
-            <a href="#stories" className="hover:text-forest transition-colors">
-              Results
-            </a>
-            <a href="#pricing" className="hover:text-forest transition-colors">
-              Tuition
-            </a>
-          </nav>
-
-          {/* CTA Action */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={onOpenCheckout}
-              className="group relative px-5 sm:px-6 py-2.5 rounded-full bg-forest text-cream text-xs uppercase tracking-luxury font-medium transition-all duration-300 hover:shadow-glass-hover hover:scale-[1.02] flex items-center gap-2 overflow-hidden"
+          {/* Action CTAs: ONLY Emergency File and Join REVERZN */}
+          <div className="flex items-center gap-2.5 sm:gap-4">
+            <a
+              href="/emergency-file.html"
+              className={`group relative px-3.5 sm:px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-luxury font-medium transition-all duration-300 border flex items-center gap-1.5 sm:gap-2 shadow-sm hover:scale-[1.02] cursor-pointer ${
+                currentPage === 'emergency-file'
+                  ? 'bg-peach text-forest border-peach-dark/40 shadow-md font-bold'
+                  : 'bg-peach/25 hover:bg-peach/45 text-forest border-peach/50'
+              }`}
             >
-              <span className="relative z-10">JOIN COHORT</span>
+              <ShieldAlert className="w-3.5 h-3.5 text-peach-dark" />
+              <span>EMERGENCY FILE</span>
+            </a>
+
+            <button
+              type="button"
+              onClick={onOpenCheckout}
+              className="group relative px-5 sm:px-6 py-2.5 rounded-full bg-forest text-cream text-xs uppercase tracking-luxury font-medium transition-all duration-300 hover:shadow-glass-hover hover:scale-[1.02] flex items-center gap-2 overflow-hidden shadow-elevated cursor-pointer"
+            >
+              <span className="relative z-10">JOIN REVERZN</span>
               <ArrowUpRight className="w-3.5 h-3.5 relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               <div className="absolute inset-0 bg-gradient-to-r from-peach to-lavender opacity-0 group-hover:opacity-20 transition-opacity" />
             </button>
@@ -78,4 +84,3 @@ export const AwwwardsNavbar: React.FC<AwwwardsNavbarProps> = ({ onOpenCheckout }
     </header>
   );
 };
-

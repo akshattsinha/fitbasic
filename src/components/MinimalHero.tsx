@@ -12,7 +12,7 @@ export const MinimalHero: React.FC<MinimalHeroProps> = ({ onOpenCheckout }) => {
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=2400&q=90"
-          alt="FIT90 Athlete Campaign"
+          alt="REVERZN Athlete Campaign"
           className="w-full h-full object-cover object-center filter grayscale-[35%] brightness-[0.38] contrast-[1.2] scale-100 animate-cinematic"
           fetchPriority="high"
         />

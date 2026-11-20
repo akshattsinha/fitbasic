@@ -31,7 +31,7 @@ export const FAQSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-base text-brand-300 font-light leading-relaxed">
-            Everything you need to know about the FIT90 curriculum, commitments, equipment, and access.
+            Everything you need to know about the REVERZN curriculum, commitments, equipment, and access.
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export const FAQSection: React.FC = () => {
             </div>
           </div>
           <a
-            href="mailto:concierge@fit90.com"
+            href="mailto:concierge@reverzn.com"
             className="text-xs font-mono uppercase tracking-widest text-white hover:text-accent-gold border-b border-white/30 hover:border-accent-gold pb-0.5 whitespace-nowrap"
           >
             Contact Advisory Team →

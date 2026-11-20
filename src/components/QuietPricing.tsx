@@ -20,7 +20,7 @@ export const QuietPricing: React.FC<QuietPricingProps> = ({ onOpenCheckout }) =>
 
         {/* Title */}
         <h2 className="font-serif text-5xl sm:text-7xl text-charcoal uppercase tracking-tight font-normal mb-6">
-          FIT<span className="italic font-light text-charcoal/70">90</span>
+          REVER<span className="italic font-light text-charcoal/70">ZN</span>
         </h2>
 
         <p className="text-base sm:text-xl text-charcoal/70 font-light max-w-xl mx-auto mb-10 font-sans leading-relaxed">

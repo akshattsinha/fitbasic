@@ -15,7 +15,7 @@ export const AwwwardsHero: React.FC<AwwwardsHeroProps> = ({ onOpenCheckout }) =>
       {/* Decorative Oversized Watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none z-0 opacity-[0.035] whitespace-nowrap">
         <span className="font-serif text-[28vw] leading-none text-forest font-bold tracking-tighter">
-          FIT90
+          REVERZN
         </span>
       </div>
 
@@ -61,7 +61,7 @@ export const AwwwardsHero: React.FC<AwwwardsHeroProps> = ({ onOpenCheckout }) =>
                 href="#philosophy"
                 className="inline-flex items-center justify-center gap-2.5 text-xs uppercase tracking-luxury font-medium text-forest/70 hover:text-forest px-7 py-4 rounded-full glass-panel-subtle hover:bg-white/80 transition-all duration-300"
               >
-                <span>DISCOVER FIT90</span>
+                <span>DISCOVER REVERZN</span>
                 <ArrowDown className="w-4 h-4 text-forest/50" />
               </a>
             </div>
@@ -91,7 +91,7 @@ export const AwwwardsHero: React.FC<AwwwardsHeroProps> = ({ onOpenCheckout }) =>
                 <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full rounded-2xl overflow-hidden bg-cream-200">
                   <img
                     src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1600&q=90"
-                    alt="FIT90 Athletic Form Campaign"
+                    alt="REVERZN Athletic Form Campaign"
                     className="w-full h-full object-cover object-center filter contrast-[1.05] brightness-[0.98] hover:scale-105 transition-transform duration-1000 ease-out"
                     fetchPriority="high"
                   />

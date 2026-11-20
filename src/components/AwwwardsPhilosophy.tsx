@@ -57,7 +57,7 @@ export const AwwwardsPhilosophy: React.FC = () => {
           </div>
           <div className="lg:col-span-4">
             <p className="text-base sm:text-lg text-forest/75 font-light leading-relaxed font-sans text-pretty">
-              FIT90 is not a frantic temporary sprint. It is an intentional 90-day architecture that aligns how you move, nourish, think and recover into an effortless permanent standard.
+              REVERZN is not a frantic temporary sprint. It is an intentional 90-day architecture that aligns how you move, nourish, think and recover into an effortless permanent standard.
             </p>
           </div>
         </div>
@@ -78,7 +78,7 @@ export const AwwwardsPhilosophy: React.FC = () => {
               "Transformation is not an emotional breakthrough. It is the cumulative grace of daily physical consistency."
             </p>
             <span className="text-[10px] font-mono uppercase tracking-luxury text-forest/50 block mt-3">
-              The FIT90 Manifesto
+              The REVERZN Manifesto
             </span>
           </div>
         </div>

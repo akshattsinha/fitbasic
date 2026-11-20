@@ -128,7 +128,7 @@ export const ExerciseModal: React.FC<ExerciseModalProps> = ({ exercise, onClose 
         <div className="p-4 bg-brand-900 border-t border-white/10 flex items-center justify-between text-xs font-mono text-brand-400">
           <div className="flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4 text-accent-gold" />
-            <span>FIT90 Biomechanical Certification Standard</span>
+            <span>REVERZN Biomechanical Certification Standard</span>
           </div>
           <button
             onClick={onClose}

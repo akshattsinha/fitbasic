@@ -14,7 +14,7 @@ export const MinimalFinal: React.FC<MinimalFinalProps> = ({ onOpenCheckout }) =>
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=2400&q=90"
-            alt="FIT90 Transformation Finale"
+            alt="REVERZN Transformation Finale"
             className="w-full h-full object-cover object-center filter grayscale contrast-[1.3] brightness-[0.32]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-noir/70" />
@@ -39,7 +39,7 @@ export const MinimalFinal: React.FC<MinimalFinalProps> = ({ onOpenCheckout }) =>
               onClick={onOpenCheckout}
               className="group inline-flex items-center gap-3 px-10 sm:px-14 py-5 bg-ivory text-noir text-xs uppercase tracking-luxury font-medium transition-all duration-300 hover:bg-white shadow-2xl"
             >
-              <span>START FIT90</span>
+              <span>START REVERZN</span>
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </button>
           </div>
@@ -54,7 +54,7 @@ export const MinimalFinal: React.FC<MinimalFinalProps> = ({ onOpenCheckout }) =>
         <div className="max-w-7xl mx-auto px-6 sm:px-12 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <span className="font-serif text-xl tracking-tight text-ivory normal-case">
-              FIT<span className="italic">90</span>
+              REVER<span className="italic">ZN</span>
             </span>
             <span className="text-ivory/20">•</span>
             <span className="text-[11px]">Lifestyle Architecture</span>
@@ -67,7 +67,7 @@ export const MinimalFinal: React.FC<MinimalFinalProps> = ({ onOpenCheckout }) =>
           </div>
 
           <div className="text-[11px] text-ivory/30">
-            © 2026 FIT90 Inc. All Rights Reserved.
+            © 2026 REVERZN Inc. All Rights Reserved.
           </div>
         </div>
       </footer>

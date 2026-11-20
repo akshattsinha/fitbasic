@@ -65,7 +65,7 @@ export const TransformationStories: React.FC = () => {
               {/* After Image (Background) */}
               <img
                 src={activeStory.afterImg}
-                alt={`${activeStory.name} After FIT90`}
+                alt={`${activeStory.name} After REVERZN`}
                 className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.9] contrast-[1.05]"
               />
 
@@ -76,7 +76,7 @@ export const TransformationStories: React.FC = () => {
               >
                 <img
                   src={activeStory.beforeImg}
-                  alt={`${activeStory.name} Before FIT90`}
+                  alt={`${activeStory.name} Before REVERZN`}
                   className="absolute inset-0 w-full h-full object-cover object-center filter grayscale-[40%] brightness-[0.7]"
                 />
               </div>
@@ -189,7 +189,7 @@ export const TransformationStories: React.FC = () => {
               <div className="mt-8 pt-6 border-t border-white/10 flex items-center gap-2 text-[11px] font-mono text-brand-500">
                 <Award className="w-4 h-4 text-accent-gold shrink-0" />
                 <span>
-                  Case studies represent disciplined execution of the FIT90 daily protocols. Individual adaptation varies based on biological baseline and consistency.
+                  Case studies represent disciplined execution of the REVERZN daily protocols. Individual adaptation varies based on biological baseline and consistency.
                 </span>
               </div>
             </div>

@@ -20,7 +20,7 @@ export const MinimalOffer: React.FC<MinimalOfferProps> = ({ onOpenCheckout }) =>
 
         {/* Title */}
         <h2 className="font-serif text-4xl sm:text-7xl text-ivory uppercase tracking-tight font-normal mb-6">
-          FIT<span className="italic font-light">90</span>
+          REVER<span className="italic font-light">ZN</span>
         </h2>
 
         <p className="text-base sm:text-xl text-ivory/70 font-light max-w-xl mx-auto mb-12 font-sans">
@@ -79,7 +79,7 @@ export const MinimalOffer: React.FC<MinimalOfferProps> = ({ onOpenCheckout }) =>
             onClick={() => onOpenCheckout(currency)}
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-12 py-5 bg-ivory text-noir text-xs uppercase tracking-luxury font-medium transition-all duration-300 hover:bg-white shadow-2xl"
           >
-            <span>ENROLL IN FIT90</span>
+            <span>ENROLL IN REVERZN</span>
             <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </button>
         </div>

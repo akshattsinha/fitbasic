@@ -18,7 +18,7 @@ export const WarmFinal: React.FC<WarmFinalProps> = ({ onOpenCheckout }) => {
         <div className="absolute inset-0 z-0 opacity-85">
           <img
             src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=2400&q=90"
-            alt="FIT90 Transformation Finale in Natural Warm Light"
+            alt="REVERZN Transformation Finale in Natural Warm Light"
             className="w-full h-full object-cover object-center filter contrast-[1.04] brightness-[0.94]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ivory via-ivory/70 to-transparent" />
@@ -43,7 +43,7 @@ export const WarmFinal: React.FC<WarmFinalProps> = ({ onOpenCheckout }) => {
               onClick={onOpenCheckout}
               className="group inline-flex items-center gap-3 px-10 sm:px-14 py-5 bg-charcoal text-ivory text-xs uppercase tracking-luxury font-medium transition-all duration-300 hover:bg-charcoal/90 shadow-elevated"
             >
-              <span>START FIT90</span>
+              <span>START REVERZN</span>
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </button>
           </div>
@@ -58,7 +58,7 @@ export const WarmFinal: React.FC<WarmFinalProps> = ({ onOpenCheckout }) => {
         <div className="max-w-7xl mx-auto px-6 sm:px-12 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <span className="font-serif text-2xl tracking-tight text-charcoal normal-case">
-              FIT<span className="italic font-light">90</span>
+              REVER<span className="italic font-light">ZN</span>
             </span>
             <span className="text-charcoal/30">•</span>
             <span className="text-[11px] text-charcoal/60">Quiet Luxury Lifestyle Architecture</span>
@@ -73,7 +73,7 @@ export const WarmFinal: React.FC<WarmFinalProps> = ({ onOpenCheckout }) => {
           </div>
 
           <div className="text-[11px] text-charcoal/40">
-            © 2026 FIT90 Inc. All Rights Reserved.
+            © 2026 REVERZN Inc. All Rights Reserved.
           </div>
         </div>
       </footer>

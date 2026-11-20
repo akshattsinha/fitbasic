@@ -203,7 +203,7 @@ export const ProductExperience: React.FC<ProductExperienceProps> = ({ onOpenPort
                 <div className="w-3 h-3 rounded-full bg-green-500/80" />
               </div>
               <span className="text-xs font-mono text-brand-400 pl-3 border-l border-white/10 hidden sm:inline">
-                FIT90 OS v3.8 — Member Sanctum
+                REVERZN OS v3.8 — Member Sanctum
               </span>
             </div>
 

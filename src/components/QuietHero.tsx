@@ -39,7 +39,7 @@ export const QuietHero: React.FC<QuietHeroProps> = ({ onOpenCheckout }) => {
                 href="#philosophy"
                 className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-charcoal text-ivory text-xs uppercase tracking-luxury font-medium transition-all duration-300 hover:bg-charcoal/85 shadow-soft-luxury"
               >
-                <span>DISCOVER FIT90</span>
+                <span>DISCOVER REVERZN</span>
                 <ArrowDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-1" />
               </a>
 
@@ -58,7 +58,7 @@ export const QuietHero: React.FC<QuietHeroProps> = ({ onOpenCheckout }) => {
             <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full overflow-hidden bg-champagne shadow-elevated">
               <img
                 src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1600&q=90"
-                alt="FIT90 Athletic Editorial in Warm Light"
+                alt="REVERZN Athletic Editorial in Warm Light"
                 className="w-full h-full object-cover object-center filter contrast-[1.05] brightness-[0.98] saturate-[0.9] hover:scale-105 transition-transform duration-1000 ease-out"
                 fetchPriority="high"
               />

@@ -24,7 +24,7 @@ export const MinimalPhilosophy: React.FC = () => {
         <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden bg-surface">
           <img
             src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2400&q=90"
-            alt="FIT90 Physical Focus"
+            alt="REVERZN Physical Focus"
             className="w-full h-full object-cover object-center filter grayscale contrast-[1.25] brightness-[0.75] hover:scale-105 transition-transform duration-1000 ease-out"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-noir/80 via-transparent to-transparent pointer-events-none" />
